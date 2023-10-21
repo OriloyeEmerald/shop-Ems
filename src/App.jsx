@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/header'
 import axios from 'axios'
-import Products from './components/Products'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ProductDetail from './components/productDetail'
+import Products from './components/Products'
 
 const API_URL = 'https://fakestoreapi.com/products'
 function App() {
@@ -79,7 +80,7 @@ function App() {
 
   return (
     <>
-    <Router >
+    <Router>
      <Header 
       cart={cart}
       handleModal={handleModal}
