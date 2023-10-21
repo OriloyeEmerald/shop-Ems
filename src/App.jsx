@@ -88,7 +88,7 @@ function App() {
       setCart={setCart}
       />
      <Routes>
-      <Route path='/' element={<Products 
+      <Route path='/' element={<Products
       products={products}
       searchProduct={searchProduct} handleSearch={handleSearch}
       isLoading={isLoading} 
