@@ -85,7 +85,7 @@ function App() {
 
   return (
     <>
-    <Router basename='/shop-ems/'>
+    <Router>
      <Header 
       cart={cart}
       handleModal={handleModal}
