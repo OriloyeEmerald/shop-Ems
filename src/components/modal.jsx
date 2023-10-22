@@ -56,8 +56,7 @@ const Modal = ({isModal, setIsModal, cart, setCart}) => {
         <div className="mt-3 bg-white border rounded-[.5rem] shadow-[2rem] py-[.5rem] px-[.6rem] flex justify-around items-center sm:py-[1.2rem] scale-out-top" key={item.id}>
           <img src={item.image} alt={item.title} className='w-12 h-12 flex-shrink-0'/>
           <div className='text-left text-[.9rem]'>
-              {/* <p >{item.title}</p> */}
-              <p><strong>price:</strong> ${item.price}</p>
+              <p><strong>price:</strong> ${parseInt(item.price * item.quantity)}</p>
               <div className='mt-1'>
                   <button className='border-[.2rem] rounded-[.3rem] px-[.4rem]' onClick={() => decreaseItem(item.id)}>-</button>
                   <button className='border-[.2rem] rounded-[.3rem] px-[.4rem]'>{item.quantity}</button>
@@ -68,6 +67,7 @@ const Modal = ({isModal, setIsModal, cart, setCart}) => {
         )
      })
      }
+
      {cart.length > 0 
      ?
      <div className='mt-[3rem] py-2 text-left'>

@@ -14,7 +14,7 @@ function App() {
   const [cart, setCart] = useState([])
   const [searchProduct, setSearchProduct] = useState('')
   const [isModal, setIsModal] = useState(false)
-
+  
 
   const handleModal = () => {
       setIsModal(true)
@@ -29,11 +29,14 @@ function App() {
     } else {
       const newProduct = { ...product, quantity };
       setCart([...cart, newProduct]);
+      alert(`${product.title} has been added to cart`)
     }
+
+    
   };
   
 
-  const removeFromCart = (id) => {
+  const removeFromCart = (product, id) => {
     const productToRemove = cart.find((item) => item.id === id);
   
     if (productToRemove) {
@@ -43,6 +46,8 @@ function App() {
       } else {
         const updatedCart = cart.filter((item) => item.id !== id);
         setCart(updatedCart);
+        alert(`${product.title} has been removed from the cart`)
+        
       }
     }
   };
@@ -96,6 +101,7 @@ function App() {
       addToCart={addToCart}
       removeFromCart = {removeFromCart}
       filterProduct={filterProduct}
+      cart={cart}
       />}/>
 
      <Route path='/products/:id' element={<ProductDetail />} />

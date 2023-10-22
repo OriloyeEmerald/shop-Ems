@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './product';
 
 
-const TheProducts = ({searchProduct, handleSearch, products, isLoading, addToCart, removeFromCart, filterProduct }) => {
+const TheProducts = ({searchProduct, handleSearch, products, isLoading, addToCart, removeFromCart, filterProduct, cart }) => {
   return (
   <>
 
@@ -21,6 +21,7 @@ const TheProducts = ({searchProduct, handleSearch, products, isLoading, addToCar
     isLoading={isLoading} 
     addToCart={addToCart}
     removeFromCart = {removeFromCart}
+    cart={cart}
     
   />)
 

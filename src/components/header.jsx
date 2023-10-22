@@ -5,7 +5,7 @@ import Modal from './modal';
 const Header = ({cart, handleModal, isModal, setIsModal, setCart}) => {
   return (
    <>
-    <div className='nav flex justify-between items-center fixed top-0 w-full bg-white shadow-lg px-[1.2rem] py-[1rem]'>
+    <div className='nav flex justify-between items-center fixed top-0 w-full bg-white shadow-lg z-30 px-[1.2rem] py-[1rem]'>
       <h2 className='text-[1.4rem]'><strong>Shop@<span className='text-yellow-700'>Ems</span></strong></h2>
       <div onClick={handleModal}>
           <ShoppingCart className='text-[1.6rem] text-red-800 relative cursor-pointer' />
