@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ProductDetail from './components/productDetail'
-import Products from './components/Products'
+import TheProducts from './components/theProducts'
 
 const API_URL = 'https://fakestoreapi.com/products'
 function App() {
@@ -80,7 +80,7 @@ function App() {
 
   return (
     <>
-    <Router basename='/shop-Ems/'>
+    <Router basename='/'>
      <Header 
       cart={cart}
       handleModal={handleModal}
@@ -89,7 +89,7 @@ function App() {
       setCart={setCart}
       />
      <Routes>
-      <Route path='/' element={<Products
+      <Route path='/' element={<TheProducts
       products={products}
       searchProduct={searchProduct} handleSearch={handleSearch}
       isLoading={isLoading} 
