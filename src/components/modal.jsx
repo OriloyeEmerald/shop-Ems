@@ -70,8 +70,8 @@ const Modal = ({isModal, setIsModal, cart, setCart}) => {
      }
      {cart.length > 0 
      ?
-     <div className='mt-2 py-2 text-left'>
-     <h3 ><strong>TOTAL:</strong> ${getTotalItemsInCart()} </h3>
+     <div className='mt-[3rem] py-2 text-left'>
+     <h3 className='text-[1.1rem]'><strong>TOTAL:</strong> ${getTotalItemsInCart()} </h3>
     </div>
     :
     <div className='flex justify-center items-center h-[300px]'>
