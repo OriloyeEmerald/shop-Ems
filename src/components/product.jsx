@@ -1,4 +1,4 @@
-import { ShoppingBag, Star, Trash } from 'phosphor-react'
+import { ShoppingBag, Star} from 'phosphor-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -64,4 +64,4 @@ const Product = ({product, id, isLoading, addToCart, removeFromCart, cart}) => {
   )
 }
 
-export default Product
+export default Product;

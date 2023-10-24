@@ -45,7 +45,7 @@ const Modal = ({isModal, setIsModal, cart, setCart}) => {
   return (
    <>
     
-     {isModal && (<div className='bg-[#fff] rounded-md shadow-lg fixed top-0 right-0 z-50 px-[2rem] py-4rem w-[80%] h-[50%] text-center overflow-y-auto '>
+     {isModal && (<div className='bg-[#fff] rounded-md shadow-lg fixed top-0 right-0 z-50 px-[2rem] py-4rem w-[80%] h-[50%] text-center overflow-y-auto lg:w-[55%] lg:h-[70%] sm:h-[65%] sm:w-[70%]'>
       
      <X className='ml-auto mt-3 text-[1.5rem] text-red-700 cursor-pointer' onClick={() => setIsModal(false)}/>
      <p className='text-[1.3rem]'><strong>Cart Items</strong></p>
@@ -64,6 +64,7 @@ const Modal = ({isModal, setIsModal, cart, setCart}) => {
               </div>
           </div>
         </div>
+        
         )
      })
      }
@@ -72,11 +73,14 @@ const Modal = ({isModal, setIsModal, cart, setCart}) => {
      ?
      <div className='mt-[3rem] py-2 text-left'>
      <h3 className='text-[1.1rem]'><strong>TOTAL:</strong> ${getTotalItemsInCart()} </h3>
+     <button className='text-white text-center mt-3 border rounded-[.5rem] bg-red-600 w-full py-[.3rem]' onClick={() => setCart([])}>CLEAR CART</button>
     </div>
+   
     :
     <div className='flex justify-center items-center h-[300px]'>
      <p className='text-[1.4rem] tracking-in-contract'><strong>Cart is empty</strong></p>
     </div>
+
      }
     
     </div>
