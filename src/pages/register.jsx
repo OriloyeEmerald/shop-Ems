@@ -7,7 +7,7 @@ const Register = ({formData, handleInputChange, handleSubmit, passwordsMatch}) =
   return (
     <div className='lg:flex relative'>
 
-    <img src={shop1} alt="" className='lg:h-screen lg:w-[650px] hidden lg:block'/>
+    <img src={shop1} alt="" className='lg:h-screen lg:w-[650px] md:w-[400px] hidden lg:block'/>
     <div className='mx-[1rem] text-left lg:absolute right-[2rem] top-0'>
     <form action="" onSubmit={handleSubmit}>
      <div className='' style={{ display: 'flex',justifyContent: 'flex-start' }}>

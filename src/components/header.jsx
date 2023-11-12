@@ -22,7 +22,7 @@ const Header = ({cart, handleModal, isModal, setIsModal, setCart, isAuthenticate
       </div>
       <div onClick={handleModal}>
           <ShoppingCart className='text-[1.6rem] text-red-800 relative cursor-pointer' />
-          <div className='bg-red-600 w-4 h-4 rounded-full text-center text-white absolute top-[.9rem] right-[.9rem]'>
+          <div className='bg-red-600 w-4 h-4 rounded-full text-center text-white absolute top-[1.5rem] right-[.9rem]'>
               <p className='text-[.7rem] '>{cart.length}</p>
           </div>
       </div>

@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import shop2 from '../assets/images/shop1.jpeg'
 
-const Login = ({formData, handleInputChange, handleSubmit, handleLogin}) => {
+const Login = ({formData, handleInputChange, handleSubmit, isAuthenticated, handleLogin, handleLogout}) => {
   return (
   <div>
     <div className='lg:flex relative'>
@@ -45,7 +45,11 @@ const Login = ({formData, handleInputChange, handleSubmit, handleLogin}) => {
          onChange={handleInputChange}
         className='w-full rounded-[.6rem] py-[.7rem] px-[.3rem] bg-[#dadada] mt-2'/>
          
-        <button className='bg-blue-600 rounded-[.4rem] py-[.6rem] px-[.8rem] text-white mt-[1rem]' type='submit' onClick={handleLogin}>Login</button>
+         {isAuthenticated 
+         ? 
+         (<button className='bg-blue-600 rounded-[.4rem] py-[.6rem] px-[.8rem] text-white mt-[1rem]' type='submit' onClick={handleLogin}>Login</button>)
+         :
+        (<button className='bg-red-600 rounded-[.4rem] py-[.6rem] px-[.8rem] text-white mt-[1rem]' type='submit' onClick={handleLogout}>Logout</button>)} 
 
         <p className='mt-[.5rem]'>Don't have an account? <span className='text-blue-600'>
             <Link to={'/register'}>Register</Link>

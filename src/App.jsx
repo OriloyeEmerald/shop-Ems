@@ -43,25 +43,34 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password === formData.repeatPassword) {
-      alert('Form submitted:', formData);
-      setFormData({
-        password: '',
-        repeatPassword: '',
-      });
-      setPasswordsMatch(true);
-    } else {
+  
+    // Check if the component is in the register page
+    const isRegisterPage = window.location.pathname === '/register'; // Adjust the path as needed
+  
+    if (isRegisterPage && formData.password !== formData.repeatPassword) {
+      // Passwords don't match on the register page
       setPasswordsMatch(false);
       alert('Passwords do not match');
+      return; // Exit the function to prevent further execution
     }
-   setFormData({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    repeatPassword: '',
-  })
+  
+    // If it's not the register page or passwords match, proceed with form submission
+    alert('Form submitted:', formData);
+    setFormData({
+      password: '',
+      repeatPassword: '',
+    });
+    setPasswordsMatch(true);
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      repeatPassword: '',
+    })
   };
+  
+   
 
   const handleModal = () => {
     setIsModal(false);
@@ -98,6 +107,7 @@ function App() {
             formData={formData}
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
+            handleLogin={handleLogin}
            
           />} />
 
