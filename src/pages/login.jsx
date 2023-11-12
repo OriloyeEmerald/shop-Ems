@@ -45,7 +45,7 @@ const Login = ({formData, handleInputChange, handleSubmit, isAuthenticated, hand
          onChange={handleInputChange}
         className='w-full rounded-[.6rem] py-[.7rem] px-[.3rem] bg-[#dadada] mt-2'/>
          
-         {isAuthenticated 
+         {!isAuthenticated 
          ? 
          (<button className='bg-blue-600 rounded-[.4rem] py-[.6rem] px-[.8rem] text-white mt-[1rem]' type='submit' onClick={handleLogin}>Login</button>)
          :
