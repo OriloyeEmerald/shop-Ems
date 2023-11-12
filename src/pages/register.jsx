@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import shop1 from '../assets/images/shopping.jpeg'
 
-const Register = ({formData, handleInputChange, handleSubmit}) => {
+const Register = ({formData, handleInputChange, handleSubmit, passwordsMatch}) => {
   return (
     <div className='lg:flex relative'>
 
@@ -80,6 +80,9 @@ const Register = ({formData, handleInputChange, handleSubmit}) => {
      <br />
      <div>
         <div><label htmlFor="">Repeat password</label></div>
+        {!passwordsMatch && (
+        <p style={{ color: 'red' }}>Passwords do not match</p>
+      )}
         <input 
         type="password" 
         name='repeatPassword'
@@ -89,7 +92,11 @@ const Register = ({formData, handleInputChange, handleSubmit}) => {
      </div>
      <br />
      <div className='flex gap-[1rem] items-center'>
-        <input type="checkbox" name="" id="" className='w-[18px] h-[18px]'/>
+        <input 
+        type="checkbox" 
+        name="" 
+        id="" 
+        className='w-[18px] h-[18px]'/>
         <p>I agree with the <span className='text-blue-500'>terms and conditions</span></p>
      </div>
      <br />

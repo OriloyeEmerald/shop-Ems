@@ -5,7 +5,7 @@ import Product from '../components/product';
 
 
 const API_URL = 'https://fakestoreapi.com/products'
-const Products = ({cart, setCart}) => {
+const Products = ({cart, setCart, isAuthenticated}) => {
 
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -42,20 +42,25 @@ const Products = ({cart, setCart}) => {
 
 
 
-    const addToCart = (product, quantity) => {
-        const existingProduct = cart.find((item) => item.id === product.id);
+     const addToCart = (product, quantity) => {
       
-        if (existingProduct) {
-          existingProduct.quantity += quantity;
-          setCart([...cart]);
-        } else {
-          const newProduct = { ...product, quantity };
-          setCart([...cart, newProduct]);
-          alert(`${product.title} has been added to cart`)
-        }
+      if (!isAuthenticated) {
+        alert('Please log in or register to add items to the cart.');
+        return;
+      }
     
-        
-      };
+      const existingProduct = cart.find((item) => item.id === product.id);
+    
+      if (existingProduct) {
+        existingProduct.quantity += quantity;
+        setCart([...cart]);
+      } else {
+        const newProduct = { ...product, quantity };
+        setCart([...cart, newProduct]);
+        alert(`${product.title} has been added to the cart`);
+      }
+    };
+    
       
     
       const removeFromCart = (product, id) => {

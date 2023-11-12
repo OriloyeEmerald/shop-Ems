@@ -45,9 +45,9 @@ const Modal = ({isModal, setIsModal, cart, setCart}) => {
   return (
    <>
     
-     {isModal && (<div className='bg-[#fff] rounded-md shadow-lg fixed top-0 right-0 z-50 px-[2rem] py-4rem w-[80%] h-[50%] text-center overflow-y-auto lg:w-[55%] lg:h-[70%] sm:h-[65%] sm:w-[70%]'>
+     {!isModal && (<div className='bg-[#fff] rounded-md shadow-lg fixed top-0 right-0 z-50 px-[2rem] py-4rem w-[80%] h-[50%] text-center overflow-y-auto lg:w-[55%] lg:h-[70%] sm:h-[65%] sm:w-[70%]'>
       
-     <X className='ml-auto mt-3 text-[1.5rem] text-red-700 cursor-pointer' onClick={() => setIsModal(false)}/>
+     <X className='ml-auto mt-3 text-[1.5rem] text-red-700 cursor-pointer' onClick={() => setIsModal(true)}/>
      <p className='text-[1.3rem]'><strong>Cart Items</strong></p>
      
      {cart.map((item) => {

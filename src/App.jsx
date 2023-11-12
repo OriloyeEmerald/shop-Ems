@@ -18,23 +18,53 @@ function App() {
     repeatPassword: '',
   });
 
-  
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+
+    if (name === 'repeatPassword') {
+      setPasswordsMatch(formData.password === value);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   alert('Form submitted:', formData);
-   setFormData({})
+    if (formData.password === formData.repeatPassword) {
+      alert('Form submitted:', formData);
+      setFormData({
+        password: '',
+        repeatPassword: '',
+      });
+      setPasswordsMatch(true);
+    } else {
+      setPasswordsMatch(false);
+      alert('Passwords do not match');
+    }
+   setFormData({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    repeatPassword: '',
+  })
   };
 
   const handleModal = () => {
-    setIsModal(true);
+    setIsModal(false);
   };
 
   return (
@@ -47,22 +77,30 @@ function App() {
             isModal={isModal}
             setIsModal={setIsModal}
             setCart={setCart}
+            isAuthenticated={isAuthenticated}
+             handleLogin={handleLogin}
+            handleLogout={handleLogout}
           />
         </LocationProvider>
 
         <Routes>
-          <Route path='/' element={<Products cart={cart} setCart={setCart} />} />
+          <Route path='/' element={<Products cart={cart} 
+          setCart={setCart}
+          isAuthenticated={isAuthenticated} />} />
           <Route path='/products/:id' element={<ProductDetail />} />
           <Route path='/register' element={<Register 
           formData={formData}
           handleInputChange={handleInputChange}
           handleSubmit={handleSubmit}
+          passwordsMatch={passwordsMatch}
           />} />
           <Route path='/login' element={<Login 
             formData={formData}
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
+           
           />} />
+
         </Routes>
       </Router>
     </>
