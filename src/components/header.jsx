@@ -7,7 +7,7 @@ const Header = ({cart, handleModal, isModal, setIsModal, setCart, isAuthenticate
   return (
    <>
     <div className='nav flex items-center fixed top-0 w-full bg-white shadow-lg z-30 px-[1.2rem] py-[1rem] sm:justify-between lg:justify-between'>
-      <h2 className='text-[1.1rem]'><strong>Kodecamp<span className='text-yellow-700'>e-commerce</span></strong></h2>
+      <h2 className='text-[1.1rem]'><strong>Shop@<span className='text-yellow-700'>ems</span></strong></h2>
     <div className='flex lg:gap-[4rem] gap-[.5rem] items-center'>
       <div className='flex lg:gap-[2rem] gap-[.5rem] items-center'>
        <Link to={'/login'}>

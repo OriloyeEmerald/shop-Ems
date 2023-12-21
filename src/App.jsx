@@ -43,18 +43,16 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-    // Check if the component is in the register page
-    const isRegisterPage = window.location.pathname === '/register'; // Adjust the path as needed
+    const isRegisterPage = window.location.pathname === '/register'; 
   
     if (isRegisterPage && formData.password !== formData.repeatPassword) {
-      // Passwords don't match on the register page
+      
       setPasswordsMatch(false);
       alert('Passwords do not match');
-      return; // Exit the function to prevent further execution
+      return; 
     }
   
-    // If it's not the register page or passwords match, proceed with form submission
+   
     alert('Form submitted:', formData);
     setFormData({
       password: '',
